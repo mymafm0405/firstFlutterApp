@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,9 +5,35 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print('Question answerd!');
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Text('Hello'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First Mobile App'),
+        ),
+        body: Column(
+          children: [
+            Text('This is the Question'),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: answerQuestion,
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: answerQuestion,
+            ),
+            RaisedButton(
+              child: Text('Answer 3'),
+              onPressed: answerQuestion,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
